@@ -11,13 +11,11 @@
       rel="stylesheet"
     />
   </head>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-    }
-  </style>
-  <body class="bg-gray-100 flex items-center justify-center min-h-screen px-4">
-    <div class="absolute top-4 left-4">
+
+  <body
+    class="bg-gray-100 flex flex-wrap items-center justify-center min-h-screen px-4 py-0"
+  >
+    <div class="w-full justify-start items-start mt-0">
       <img src="logo-uim.png" alt="Logo" class="w-40" />
     </div>
 
@@ -90,12 +88,21 @@
         </div>
       </div>
 
-      <div class="w-full justify-center d-flex items-center">
+      <div
+        id="groupBtn"
+        class="hidden w-full justify-center d-flex items-center"
+      >
         <button
           id="captureBtn"
-          class="hidden bg-indigo-500 text-white px-6 py-2 rounded-xl hover:bg-indigo-600"
+          class="bg-indigo-500 text-white px-6 py-2 rounded-xl hover:bg-indigo-600"
         >
           Download hasil lo 📥
+        </button>
+        <button
+          id="reloadBtn"
+          class="bg-indigo-500 text-white px-6 py-2 rounded-xl hover:bg-indigo-600"
+        >
+          Kerjain Ulang
         </button>
       </div>
     </div>
