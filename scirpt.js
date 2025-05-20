@@ -115,12 +115,12 @@ const resultDescriptions = {
   designer: [
     "🖌️ Lo itu <strong>* Desainer yang Bisa Debat Sama Font! *</strong> Lo bisa ngabisin sejam cuma buat milih antara Helvetica atau Inter. Tapi hasilnya? Klien senyum, mata puas, hati lega. (Meski deadline udah lewat dikit…)",
     "🎨 Lo itu <strong>* Desainer Visual sipaling perpeksionis*!</strong> Setiap detail harus terlihat sempurna. Bagi lo, desain bukan cuma soal penampilan, tapi juga bagaimana pengalaman pengguna terasa nyaman dan indah.",
-    "🎯 Lo itu <strong>* Spesialis Geser 1px Biar Rapi! *</strong> Orang lain gak notice, tapi lo tau persis kalau tombol itu belum center. Lo bukan perfeksionis—lo cuma sahabatan sama detail yang orang lain abaikan!",
+    "🎯 Lo itu <strong>*Desainer Spesialis Geser 1px Biar Rapi! *</strong> Orang lain gak notice, tapi lo tau persis kalau tombol itu belum center. Lo bukan perfeksionis—lo cuma sahabatan sama detail yang orang lain abaikan!",
   ],
   analyzer: [
-    "🧠 Lo itu <strong>Ahli Ramal Masa Depan (Pakai Excel, Bukan Tarot)!</strong> Lo bisa prediksi tren cuma dari tumpukan data mentah. Buat lo, spreadsheet itu tempat meditasi, dan pivot table udah kayak mantra sakti!",
+    "🧠 Lo itu <strong>*Sang Analisis Ahli Ramal Masa Depan (Pakai Excel, Bukan Tarot)!</strong> Lo bisa prediksi tren cuma dari tumpukan data mentah. Buat lo, spreadsheet itu tempat meditasi, dan pivot table udah kayak mantra sakti!",
     "📊 Lo itu <strong>*Data Analis*!</strong> Setiap angka, grafik, dan tabel punya cerita yang harus diungkap. Lo bisa melihat pola tersembunyi dalam data, dan bahkan bisa merasakan jika ada yang nggak beres dengan analisis yang lo temuin.",
-    "📉 Lo itu <strong>* Analis keren! * </strong> Satu-satunya orang yang bisa bilang ini menarik, kok datanya aneh ya? sambil senyum. Lo gak cuma baca data—lo ngobrol sama dia, dan datanya jawab balik!",
+    "📉 Lo itu <strong>*Data Analis keren! * </strong> Satu-satunya orang yang bisa bilang ini menarik, kok datanya aneh ya? sambil senyum. Lo gak cuma baca data—lo ngobrol sama dia, dan datanya jawab balik!",
   ],
   heker: [
     '💻 Lo itu <strong>Hacker yang Selalu Nyari Celah!</strong> Lo nggak takut sama firewall, karena buat lo, itu cuma tantangan baru. Kalau ada yang bilang "gak bisa," lo malah tambah semangat: "Yaudah, kita coba lagi!',
@@ -136,12 +136,19 @@ let userInfo = {};
 function startQuiz() {
   userInfo = {
     name: document.getElementById("name").value,
+    sekolah: document.getElementById("asal-sekolah").value,
     age: document.getElementById("age").value,
     hobby: document.getElementById("hobby").value,
     zodiac: document.getElementById("zodiac").value,
   };
 
-  if (!userInfo.name || !userInfo.age || !userInfo.hobby || !userInfo.zodiac) {
+  if (
+    !userInfo.name ||
+    !userInfo.age ||
+    !userInfo.hobby ||
+    !userInfo.zodiac ||
+    !userInfo.sekolah
+  ) {
     showPopup();
   } else {
     document.getElementById("user-form").classList.add("hidden");
@@ -184,6 +191,7 @@ function showResult() {
   const percentage = Math.floor(Math.random() * 30) + 70;
 
   document.getElementById("r-name").textContent = userInfo.name;
+  document.getElementById("r-sekolah").textContent = userInfo.sekolah;
   document.getElementById("r-age").textContent = userInfo.age;
   document.getElementById("r-hobby").textContent = userInfo.hobby;
   document.getElementById("r-zodiac").textContent = userInfo.zodiac;
